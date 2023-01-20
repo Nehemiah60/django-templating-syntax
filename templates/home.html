@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+{%extends "base.html"%}
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      {%block content%}
+      <h1>It is never Absolute</h1>
+
+<p>
+      <h3>{{my_thing|capfirst|upper}}</h3>
+      <br>
+      {{yours}}
+      <br>
+      {{my_number}}
+      <br>
+<ul>
+{%for i in my_list%}
+{% if i == 23%}
+<li>{{forloop.counter}}-{{i|add:40}}</li>
+{%elif i == "GET"%}
+<li>Wrong Request</li>
+{%else%}
+<li>{{forloop.counter}}-{{i}}</li>
+{%endif%}
+
+
+
+{%endfor%}
+</ul>
+</p>
+
+      {%endblock%}
+
+</body>
+
+</html>
